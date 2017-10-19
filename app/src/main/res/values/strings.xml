@@ -3,6 +3,41 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
 
+    <string-array name="strings_array">
+        <item>Blade runner</item>
+        <item>Kingsman</item>
+        <item>Thor</item>
+        <item>Spiderman</item>
+        <item>Superman</item>
+        <item>Batman</item>
+        <item>Project X</item>
+        <item>Torrente</item>
+        <item>Blade runner</item>
+        <item>Kingsman</item>
+        <item>Thor</item>
+        <item>Spiderman</item>
+        <item>Superman</item>
+        <item>Batman</item>
+        <item>Project X</item>
+        <item>Torrente</item>
+        <item>Blade runner</item>
+        <item>Kingsman</item>
+        <item>Thor</item>
+        <item>Spiderman</item>
+        <item>Superman</item>
+        <item>Batman</item>
+        <item>Project X</item>
+        <item>Torrente</item>
+        <item>Blade runner</item>
+        <item>Kingsman</item>
+        <item>Thor</item>
+        <item>Spiderman</item>
+        <item>Superman</item>
+        <item>Batman</item>
+        <item>Project X</item>
+        <item>Torrente</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

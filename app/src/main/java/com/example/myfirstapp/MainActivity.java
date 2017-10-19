@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //Add fragments to adapter one by one
         adapter.addFragment(new FragmentOne(), "Rosa");
         adapter.addFragment(new FragmentTwo(), "Azul");
-        adapter.addFragment(new FragmentThree(), "Naranja");
+        adapter.addFragment(new FragmentThree(), "Peliculas");
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
