@@ -44,7 +44,7 @@ public class FragmentThree extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         String[] array_list = getResources().getStringArray(R.array.strings_array);
-        // specify an adapter (see also next example)
+        // specify an adapter
         mAdapter = new MyAdapter(array_list);
         mRecyclerView.setAdapter(mAdapter);
 
