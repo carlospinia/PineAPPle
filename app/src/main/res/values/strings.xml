@@ -2,6 +2,14 @@
     <string name="app_name">PiñApp</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="usuario">Carlos Piña</string>
+    <string name="seccion_1">Seccion 1</string>
+    <string name="seccion_2">Seccion 2</string>
+    <string name="seccion_3">Seccion 3</string>
+    <string name="opcion_1">Opcion 1</string>
+    <string name="opcion_2">Opcion 2</string>
+    <string name="otras_opciones">Otras opciones</string>
+    <string name="description">Descripcion</string>
 
     <string-array name="strings_array">
         <item>Blade runner</item>
@@ -24,15 +32,7 @@
         <item>Kingsman</item>
         <item>Thor</item>
         <item>Spiderman</item>
-        <item>Superman</item>
-        <item>Batman</item>
-        <item>Project X</item>
-        <item>Torrente</item>
-        <item>Blade runner</item>
-        <item>Kingsman</item>
-        <item>Thor</item>
-        <item>Spiderman</item>
-        <item>Superman</item>
+        <item>Supe12rman</item>
         <item>Batman</item>
         <item>Project X</item>
         <item>Torrente</item>
