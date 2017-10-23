@@ -12,30 +12,19 @@
     <string name="description">Descripcion</string>
 
     <string-array name="strings_array">
-        <item>Blade runner</item>
-        <item>Kingsman</item>
-        <item>Thor</item>
-        <item>Spiderman</item>
-        <item>Superman</item>
-        <item>Batman</item>
-        <item>Project X</item>
-        <item>Torrente</item>
-        <item>Blade runner</item>
-        <item>Kingsman</item>
-        <item>Thor</item>
-        <item>Spiderman</item>
-        <item>Superman</item>
-        <item>Batman</item>
-        <item>Project X</item>
-        <item>Torrente</item>
-        <item>Blade runner</item>
-        <item>Kingsman</item>
-        <item>Thor</item>
-        <item>Spiderman</item>
-        <item>Supe12rman</item>
-        <item>Batman</item>
-        <item>Project X</item>
-        <item>Torrente</item>
+        <item>Nombre 1</item>
+        <item>Nombre 2</item>
+        <item>Nombre 3</item>
+        <item>Nombre 3</item>
+        <item>Nombre 4</item>
+        <item>Nombre 5</item>
+        <item>Nombre 6</item>
+        <item>Nombre 7</item>
+        <item>Nombre 8</item>
+        <item>Nombre 9</item>
+        <item>Nombre 10</item>
+        <item>Nombre 11</item>
+        <item>Nombre 12</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
