@@ -1,5 +1,6 @@
 package com.example.myfirstapp;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -65,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentTransaction = true;
                                 break;
                             case R.id.menu_seccion_2:
-                                fragment = new FragmentTwo();
-                                fragmentTransaction = true;
+                                //fragment = new FragmentTwo();
+                                //fragmentTransaction = true;
+                                openSec1(getWindow().getDecorView().getRootView());
                                 break;
                             case R.id.menu_seccion_3:
                                 fragment = new FragmentThree();
@@ -91,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-
-
     }
 
     @Override
@@ -105,4 +105,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openSec1 (View view){
+        Intent intent = new Intent(this, Seccion1.class);
+        startActivity(intent);
+    }
 }
