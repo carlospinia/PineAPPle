@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String ITEM_NAME = "com.example.myfirstapp.ITEM";
     private DrawerLayout drawerLayout;
 
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
 
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
@@ -68,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.menu_seccion_2:
                                 //fragment = new FragmentTwo();
                                 //fragmentTransaction = true;
-                                openSec1(getWindow().getDecorView().getRootView());
+                                String itemMenuName = (String) menuItem.getTitle();
+                                openSec1(getWindow().getDecorView().getRootView(), itemMenuName);
                                 break;
                             case R.id.menu_seccion_3:
                                 fragment = new FragmentThree();
@@ -105,8 +107,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openSec1 (View view){
+    public void openSec1 (View view, String itemMenu){
         Intent intent = new Intent(this, Seccion1.class);
+        intent.putExtra(ITEM_NAME, itemMenu);
         startActivity(intent);
     }
 }
