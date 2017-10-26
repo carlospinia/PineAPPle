@@ -1,7 +1,10 @@
 package com.example.myfirstapp;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -43,6 +46,14 @@ public class Seccion1 extends AppCompatActivity implements OnMapReadyCallback {
         Intent intent = getIntent();
         String item_name = intent.getStringExtra(MainActivity.ITEM_NAME);
         getSupportActionBar().setTitle(item_name);
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mapa.setMyLocationEnabled(true);
+            mapa.setMyLocationEnabled(true);
+        } else {
+            // Show rationale and request permission.
+        }
     }
 
     @Override
