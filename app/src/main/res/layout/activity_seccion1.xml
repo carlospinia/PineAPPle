@@ -50,15 +50,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="180dp"
             android:paddingHorizontal="10dp" />
-        <!--
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Madrid"
-            android:elevation="16dp"
-            android:textColor="@android:color/black"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-            -->
+
     </FrameLayout>
 </RelativeLayout>

@@ -8,7 +8,6 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -22,11 +21,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import org.w3c.dom.Text;
 
 public class Seccion1 extends AppCompatActivity implements OnMapReadyCallback {
     private static final int LOCATION_REQUEST_CODE = 1;
@@ -56,9 +52,7 @@ public class Seccion1 extends AppCompatActivity implements OnMapReadyCallback {
         Button buttonLatLong = (Button) findViewById(R.id.infoUbicacion);
         buttonLatLong.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                showLatLong();
-            }
+            public void onClick(View v) { showLatLong(); }
         });
 
         Intent intent = getIntent();
@@ -91,18 +85,12 @@ public class Seccion1 extends AppCompatActivity implements OnMapReadyCallback {
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         if (requestCode == LOCATION_REQUEST_CODE) {
-            // ¿Permisos asignados?
-            if (permissions.length > 0 &&
-                    permissions[0].equals(Manifest.permission.ACCESS_FINE_LOCATION) &&
-                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                        == PackageManager.PERMISSION_GRANTED) {
-                    mapa.setMyLocationEnabled(true);
-                    mapa.getUiSettings().setMyLocationButtonEnabled(true);
-                }
-            } else {
-                Toast.makeText(this, "Error de permisos", Toast.LENGTH_LONG).show();
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED) {
+                mapa.setMyLocationEnabled(true);
             }
+        } else {
+            Toast.makeText(this, "Error de permisos", Toast.LENGTH_LONG).show();
         }
     }
 
