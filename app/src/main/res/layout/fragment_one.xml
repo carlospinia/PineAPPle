@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#D81B60"
+    android:background="#1bc2d8"
     android:layout_height="match_parent">
 
     <!-- A RecyclerView with some commonly used attributes -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment One"
+        android:text="Sonido y vibración"
         android:textSize="40dp"
         android:textStyle="bold"
         android:textColor="#fff"
         android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/btn_sonar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="20dp"
+        android:text="Sonar"/>
+
+    <Button
+        android:id="@+id/btn_sonar_vibrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="125dp"
+        android:layout_marginTop="20dp"
+        android:text="Vibrar y sonar"/>
+
+    <Button
+        android:id="@+id/btn_vibrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:text="vibrar"/>
 
 </RelativeLayout>
