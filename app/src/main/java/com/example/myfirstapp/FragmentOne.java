@@ -1,12 +1,17 @@
 package com.example.myfirstapp;
 
 import android.content.Context;
-import android.net.Uri;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class FragmentOne extends Fragment {
 
@@ -23,7 +28,40 @@ public class FragmentOne extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        View v = inflater.inflate(R.layout.fragment_one, container, false);
+
+        final Button bVibrate = (Button) v.findViewById(R.id.btn_vibrar);
+        final Button bVibrate_sound = (Button) v.findViewById(R.id.btn_sonar_vibrar);
+        final Button bSound = (Button) v.findViewById(R.id.btn_sonar);
+
+        final Vibrator vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        final MediaPlayer mp = MediaPlayer.create(this.getActivity(), R.raw.game_over);
+
+        bVibrate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibrator.vibrate(800);
+            }
+        });
+
+        bSound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp.start();
+            }
+        });
+
+
+        bVibrate_sound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //star wars
+                vibrator.vibrate(3000);
+                mp.start();
+            }
+        });
+
+        return v;
     }
 
 }
