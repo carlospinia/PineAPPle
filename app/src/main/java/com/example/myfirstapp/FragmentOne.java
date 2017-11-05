@@ -4,7 +4,9 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,45 +30,38 @@ public class FragmentOne extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_one, container, false);
 
-        Button bVibrate = (Button) v.findViewById(R.id.btn_vibrar);
-        Button bVibrate_sound = (Button) v.findViewById(R.id.btn_sonar_vibrar);
-        Button bSound = (Button) v.findViewById(R.id.btn_sonar);
+        final Button bVibrate = (Button) v.findViewById(R.id.btn_vibrar);
+        final Button bVibrate_sound = (Button) v.findViewById(R.id.btn_sonar_vibrar);
+        final Button bSound = (Button) v.findViewById(R.id.btn_sonar);
 
-        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
-        final MediaPlayer mp = MediaPlayer.create(getActivity(), R.raw.game_over);
+        final Vibrator vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        final MediaPlayer mp = MediaPlayer.create(this.getActivity(), R.raw.game_over);
 
-        bVibrate.setOnTouchListener(new View.OnTouchListener() {
+        bVibrate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    vibrator.vibrate(800);
-                }
-                return false;
+            public void onClick(View v) {
+                vibrator.vibrate(800);
             }
         });
 
-        bVibrate_sound.setOnTouchListener(new View.OnTouchListener() {
+        bSound.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    vibrator.vibrate(800);
-                    mp.start();
-                }
-                return false;
+            public void onClick(View v) {
+                mp.start();
             }
         });
 
-        bSound.setOnTouchListener(new View.OnTouchListener() {
+
+        bVibrate_sound.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    mp.start();
-                }
-                return false;
+            public void onClick(View v) {
+                //star wars
+                vibrator.vibrate(3000);
+                mp.start();
             }
         });
 
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        return v;
     }
 
 }
