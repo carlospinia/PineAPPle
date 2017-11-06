@@ -1,7 +1,9 @@
 package com.example.myfirstapp;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.design.widget.Snackbar;
@@ -35,33 +37,35 @@ public class FragmentOne extends Fragment {
         final Button bSound = (Button) v.findViewById(R.id.btn_sonar);
 
         final Vibrator vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-        final MediaPlayer mp = MediaPlayer.create(this.getActivity(), R.raw.game_over);
+        final ToneGenerator tone = new ToneGenerator(AudioManager.STREAM_MUSIC,100);
+        //final MediaPlayer mp = MediaPlayer.create(this.getActivity(), R.raw.game_over);
 
         bVibrate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vibrator.vibrate(800);
+                //long[] pattern = {0, 200, 200, 200};
+                //vibrator.vibrate(pattern, -1); //-1 = once; 0 = repeat indefinitely
+                vibrator.vibrate(200);
             }
         });
 
         bSound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mp.start();
+                //mp.start();
+                tone.startTone(ToneGenerator.TONE_CDMA_ABBR_ALERT);
             }
         });
 
-
         bVibrate_sound.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //star wars
+            public void onClick(View v){
                 vibrator.vibrate(3000);
-                mp.start();
+               // mp.start();
+                tone.startTone(ToneGenerator.TONE_CDMA_ABBR_ALERT);
             }
         });
 
         return v;
     }
-
 }
